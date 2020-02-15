@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">tourist</string>
+    <string name="servProviderTable">servProvider</string>
 </resources>

@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "667795817156",
+    "firebase_url": "https://reboot-asap.firebaseio.com",
+    "project_id": "reboot-asap",
+    "storage_bucket": "reboot-asap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667795817156:android:b1ed361d82fd3af4a7ff91",
+        "android_client_info": {
+          "package_name": "com.example.reboot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667795817156-g6sa8e9nev3plqfveq426bu6v386hojh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reboot",
+            "certificate_hash": "d848a008f1e8b03b79b5caa219a8fb9cfa429262"
+          }
+        },
+        {
+          "client_id": "667795817156-b33b3eb57su34kemskb6k23h82km5fn4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reboot",
+            "certificate_hash": "e151d3e4238a5e766cd984f169c8735ce8b2e762"
+          }
+        },
+        {
+          "client_id": "667795817156-7gla1nbns2bpoqemq9volt1gpgcaqu7n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reboot",
+            "certificate_hash": "16e6547b75e23e9149d4febf10eb5c3d56024249"
+          }
+        },
+        {
+          "client_id": "667795817156-0k8c4f2o23pdts643i847dati07bkeuu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCZS1HKQ6srCSHgYWkPn2bAt4zN77BRPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667795817156-0k8c4f2o23pdts643i847dati07bkeuu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667795817156:android:b1f1892e9ef5ec24a7ff91",
+        "android_client_info": {
+          "package_name": "com.example.tourist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667795817156-0k8c4f2o23pdts643i847dati07bkeuu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCZS1HKQ6srCSHgYWkPn2bAt4zN77BRPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667795817156-0k8c4f2o23pdts643i847dati07bkeuu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
