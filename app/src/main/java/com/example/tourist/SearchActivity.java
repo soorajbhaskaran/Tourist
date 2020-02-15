@@ -3,6 +3,7 @@ package com.example.tourist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,9 @@ public class SearchActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String cat = serviceCategories.get(i);
                 // show page of this category
-
+                Intent intent = new Intent(SearchActivity.this, ServiceCategoryActivity.class);
+                intent.putExtra("category", cat);
+                startActivity(intent);
             }
         });
     }

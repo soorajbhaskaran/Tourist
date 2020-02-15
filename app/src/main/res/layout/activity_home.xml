@@ -20,6 +20,7 @@
         android:elevation="10dp">
 
         <LinearLayout
+            android:id="@+id/homeExploreBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -27,18 +28,20 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/homeExploreIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_explore" />
 
             <TextView
-                android:id="@+id/bookings_txt"
+                android:id="@+id/homeExploreTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Explore"/>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/homeFollowBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -46,18 +49,20 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/homeFollowIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_heart" />
 
             <TextView
-                android:id="@+id/services_txt"
+                android:id="@+id/homeFollowTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Following" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/homeProfileBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -65,11 +70,13 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/homeProfileIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_profile" />
 
             <TextView
+                android:id="@+id/homeProfileTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profile" />
