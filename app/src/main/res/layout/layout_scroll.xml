@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left|bottom"
         android:text="Garuda Hotel"
-        android:textColor="@color/colorBlack"/>
+        android:textSize="30dp"
+        android:textColor="@color/colorBlack" />
 
 
 </LinearLayout>
