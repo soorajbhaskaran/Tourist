@@ -7,4 +7,5 @@
     <color name="colorVeryDisabledAccent">#DBDBDB</color>
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000</color>
+    <color name="colorGrey">"#312522</color>
 </resources>
