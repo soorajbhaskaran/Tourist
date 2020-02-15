@@ -6,16 +6,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends Activity implements View.OnClickListener {
 
     TrendingLocalAdapter trendingAdapter;
     DiscoverLocalAdapter discoverAdapter;
     List<Story> trendingStoryList, discoverStoryList;
+    ImageView searchIcon;
 
     RecyclerView trendingLocalListView, discoverLocalListView;
 
@@ -26,6 +31,7 @@ public class HomeActivity extends Activity {
 
         trendingLocalListView = findViewById(R.id.trendingLocalList);
         discoverLocalListView = findViewById(R.id.discoverLocalList);
+        searchIcon = findViewById(R.id.searchServices);
 
         trendingStoryList = new ArrayList<>();
         discoverStoryList = new ArrayList<>();
@@ -41,6 +47,8 @@ public class HomeActivity extends Activity {
         discoverLocalListView.setLayoutManager(new GridLayoutManager(this, 2));
         discoverLocalListView.setItemAnimator(new DefaultItemAnimator());
         prepareDiscoverStories();
+
+        searchIcon.setOnClickListener(this);
     }
 
     private void prepareDiscoverStories() {
@@ -77,5 +85,16 @@ public class HomeActivity extends Activity {
         trendingStoryList.add(story);
         trendingAdapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id){
+            case R.id.searchServices:
+                Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
