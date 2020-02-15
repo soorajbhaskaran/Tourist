@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="35"
+        android:textSize="35dp"
         android:text="Check Out"
         />
     <TextView
@@ -24,8 +24,8 @@
         android:layout_height="wrap_content"
         android:text="Venu's Homestay"
         android:textColor="@color/colorGrey"
-        android:layout_marginTop="30"
-        android:layout_marginLeft="10"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,20 +38,20 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:text="No of people"/>
+            android:text="No of pieces"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/grey_rounded_box"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="4"
-            android:text="x A/C Room"/>
+            android:paddingVertical="4dp"
+            android:text="x Ar. Kannadi"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_weight="3">
@@ -60,7 +60,7 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginLeft="10"
+            android:layout_marginLeft="10dp"
             android:text="Date of service" />
 
         <EditText
@@ -71,7 +71,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="date"
-            android:layout_marginRight="10"
+            android:layout_marginRight="10dp"
             android:background="@drawable/grey_rounded_box"
             android:text="From" />
 
@@ -86,12 +86,51 @@
             android:inputType="date"
             android:text="To" />
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_weight="3">
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="₹"
+                android:layout_marginTop="10dp"
+                android:textSize="30dp"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:id="@+id/booking_amount_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textSize="30dp"
+                android:layout_marginTop="10dp"
+                android:text="1500"
+                android:textColor="@color/colorAccent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+            >
 
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:textSize="20dp"
+                android:paddingHorizontal="5dp"
+                android:text="Pay"
+                android:gravity="center"
+                android:background="@drawable/green_round_fill"
+                android:textColor="@color/colorWhite"/>
+        </LinearLayout>
     </LinearLayout>
+</LinearLayout>
+</LinearLayout>
