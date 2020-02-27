@@ -28,6 +28,14 @@ public class SessionManager {
         editor.commit();
     }
 
+    public ServProvider getServiceProvider(){
+        String json = session.getString(SERV_PROVIDER, "");
+        if (!json.isEmpty())
+            return new Gson().fromJson(json, ServProvider.class);
+        else
+            return null;
+    }
+
     public String getTouristEmail(){
         String json = session.getString(SERV_PROVIDER, "");
         if (!json.isEmpty())

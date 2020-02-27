@@ -6,21 +6,27 @@ import java.util.List;
 public class ServProvider {
     private String name;
     private String email;
+    private String desc;
     private String aadharNo;
     private String phone;
     private String address;
+    private String city;
     private String uniqueID;
     private String regProofLink;
+    private String posterLink;
     private String serviceType;
-    private List<ProvidedServices> servicesList;
+    private List<ProvidedServices> servicesList = new ArrayList<>();
+    private List<CustomerReview> reviewList = new ArrayList<>();
+    private boolean isOpen;
 
     public ServProvider(String name, String email, String aadharNo, String phone, String address,
-                        String uniqueID, String regProofLink, String serviceType){
+                        String city, String uniqueID, String regProofLink, String serviceType){
         this.name = name;
         this.email = email;
         this.aadharNo = aadharNo;
         this.phone = phone;
         this.address = address;
+        this.city = city;
         this.uniqueID = uniqueID;
 
         this.regProofLink = regProofLink;
@@ -102,5 +108,45 @@ public class ServProvider {
 
     public void setServicesList(List<ProvidedServices> servicesList) {
         this.servicesList = servicesList;
+    }
+
+    public boolean isOpen() {
+        return isOpen;
+    }
+
+    public void setOpen(boolean open) {
+        isOpen = open;
+    }
+
+    public List<CustomerReview> getReviewList() {
+        return reviewList;
+    }
+
+    public void setReviewList(List<CustomerReview> reviewList) {
+        this.reviewList = reviewList;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPosterLink() {
+        return posterLink;
+    }
+
+    public void setPosterLink(String posterLink) {
+        this.posterLink = posterLink;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 }

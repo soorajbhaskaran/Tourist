@@ -1,5 +1,6 @@
 package com.example.tourist;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,19 +41,24 @@ public class HomeActivity extends Activity implements View.OnClickListener {
     LinearLayout homeProfileBtn;
     ImageView homeProfileIcon;
     TextView homeProfileTxt;
+    LinearLayout homeExploreSec, homeProfileSec;
+    DatabaseReference databaseReference;
 
-    LinearLayout homeExploreSec;
+    private String currentCity = "Thrissur";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        databaseReference = FirebaseDatabase.getInstance().getReference(getString(R.string.servProviderTable));
+
         trendingLocalListView = findViewById(R.id.trendingLocalList);
         discoverLocalListView = findViewById(R.id.discoverLocalList);
         searchIcon = findViewById(R.id.searchServices);
 
         homeExploreSec = findViewById(R.id.homeExploreSec);
+        homeProfileSec = findViewById(R.id.homeProfileSec);
 
         homeExploreIcon = findViewById(R.id.homeExploreIcon);
         homeExploreTxt = findViewById(R.id.homeExploreTxt);
@@ -101,6 +114,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         hideAll();
         homeProfileIcon.setColorFilter(getResources().getColor(R.color.colorAccent));
         homeProfileTxt.setTextColor(getResources().getColor(R.color.colorAccent));
+
+        homeProfileSec.setVisibility(View.VISIBLE);
     }
 
     private void showFollowSec() {
@@ -126,29 +141,35 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         homeProfileTxt.setTextColor(getResources().getColor(R.color.colorDisabledAccent));
 
         homeExploreSec.setVisibility(View.GONE);
+        homeProfileSec.setVisibility(View.GONE);
     }
 
     private void prepareDiscoverStories() {
-        Story story = new Story();
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverStoryList.add(story);
-        discoverAdapter.notifyDataSetChanged();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getChildrenCount() < 1){
+                    Toast.makeText(HomeActivity.this, "No service providers available", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                discoverStoryList.clear();
+                for(DataSnapshot snap: dataSnapshot.getChildren()){
+                    ServProvider servProvider = snap.getValue(ServProvider.class);
+                    if (servProvider == null)
+                        continue;
+                    if (servProvider.getCity().equals(currentCity)){
+                        Story story = new Story(servProvider.getName(),"", servProvider.getDesc(), servProvider.getEmail());
+                        discoverStoryList.add(story);
+                    }
+                }
+                discoverAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(HomeActivity.this, "Something went wrong. Try again later", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

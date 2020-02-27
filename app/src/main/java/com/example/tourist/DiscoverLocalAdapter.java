@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +30,8 @@ public class DiscoverLocalAdapter extends  RecyclerView.Adapter<DiscoverLocalAda
     public void onBindViewHolder(@NonNull DiscoverViewHolder holder, int position) {
         Story story = storyList.get(position);
         holder.storyImg.setImageResource(R.drawable.eve);
+        holder.servProvTitle.setText(story.getStoryTitle());
+        holder.servProvDesc.setText(story.getStoryDesc());
     }
 
     @Override
@@ -38,9 +41,12 @@ public class DiscoverLocalAdapter extends  RecyclerView.Adapter<DiscoverLocalAda
 
     public class DiscoverViewHolder extends RecyclerView.ViewHolder {
         ImageView storyImg;
+        TextView servProvTitle, servProvDesc;
         public DiscoverViewHolder(@NonNull View itemView) {
             super(itemView);
             storyImg = itemView.findViewById(R.id.storyImg);
+            servProvTitle = itemView.findViewById(R.id.servProvTitle);
+            servProvDesc = itemView.findViewById(R.id.servProvDesc);
         }
     }
 }

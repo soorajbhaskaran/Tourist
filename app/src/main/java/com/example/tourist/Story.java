@@ -1,14 +1,24 @@
 package com.example.tourist;
 
 public class Story {
-    private String storyTitle, storyImgUrl, storyDesc;
+    private String storyTitle;
+    private String storyImgUrl;
+    private String storyDesc;
+    private String servProvEmail;
     private String storyPubDate;
 
-    public Story(String storyTitle, String storyImgUrl, String storyDesc, String storyPubDate) {
+//    public Story(String storyTitle, String storyImgUrl, String storyDesc, String storyPubDate) {
+//        this.storyTitle = storyTitle;
+//        this.storyImgUrl = storyImgUrl;
+//        this.storyDesc = storyDesc;
+//        this.storyPubDate = storyPubDate;
+//    }
+    public Story(String storyTitle, String storyImgUrl, String storyDesc, String servProvEmail) {
+
         this.storyTitle = storyTitle;
         this.storyImgUrl = storyImgUrl;
         this.storyDesc = storyDesc;
-        this.storyPubDate = storyPubDate;
+        this.servProvEmail = servProvEmail;
     }
     public Story(){}
 
